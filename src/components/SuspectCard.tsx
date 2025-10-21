@@ -1,49 +1,45 @@
-import { Suspect } from '@/types/game';
-import { Button } from '@/components/ui/button';
-import { FileText } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 interface SuspectCardProps {
-  suspect: Suspect;
-  onInterrogate: () => void;
+  name: string;
+  role: string;
+  motive: string;
+  alibi: string;
+  suspicionLevel: "low" | "medium" | "high";
 }
 
-export const SuspectCard = ({ suspect, onInterrogate }: SuspectCardProps) => {
+export const SuspectCard = ({ name, role, motive, alibi, suspicionLevel }: SuspectCardProps) => {
+  const suspicionColors = {
+    low: "bg-green-500/20 text-green-400 border-green-500/30",
+    medium: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
+    high: "bg-red-500/20 text-red-400 border-red-500/30",
+  };
+
   return (
-    <div className="case-file p-6 transition-smooth hover:scale-105 cursor-pointer group" onClick={onInterrogate}>
-      <div className="flex flex-col items-center text-center space-y-4">
-        <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary/30 noir-glow">
-          <img 
-            src={suspect.image} 
-            alt={suspect.name}
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-          />
-        </div>
-        
-        <div>
-          <h3 className="font-display text-2xl text-primary mb-1">{suspect.name}</h3>
-          <p className="text-accent text-sm uppercase tracking-wider mb-2">{suspect.role}</p>
-          <p className="text-muted-foreground text-sm leading-relaxed">{suspect.bio}</p>
+    <Card className="bg-card border-border shadow-[0_10px_40px_-10px_hsl(0_0%_0%_/_0.6)] hover:shadow-[0_0_30px_hsl(40_85%_60%_/_0.2)] transition-all">
+      <CardContent className="p-6">
+        <div className="flex justify-between items-start mb-4">
+          <div>
+            <h3 className="text-xl font-bold text-foreground mb-1">{name}</h3>
+            <p className="text-sm text-primary">{role}</p>
+          </div>
+          <Badge variant="outline" className={suspicionColors[suspicionLevel]}>
+            {suspicionLevel.toUpperCase()}
+          </Badge>
         </div>
 
-        <div className="flex items-center gap-2 text-xs">
-          {[...Array(3)].map((_, i) => (
-            <div 
-              key={i}
-              className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
-                i < suspect.questionsRemaining 
-                  ? 'border-primary bg-primary/20 text-primary' 
-                  : 'border-muted bg-muted/10 text-muted'
-              }`}
-            >
-              {i < suspect.questionsRemaining && <FileText className="w-3 h-3" />}
-            </div>
-          ))}
+        <div className="space-y-3">
+          <div>
+            <p className="text-xs font-semibold text-muted-foreground uppercase mb-1">Motive</p>
+            <p className="text-sm text-foreground">{motive}</p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold text-muted-foreground uppercase mb-1">Alibi</p>
+            <p className="text-sm text-foreground">{alibi}</p>
+          </div>
         </div>
-
-        <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
-          Interrogate
-        </Button>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };

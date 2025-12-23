@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 <p align="center">
   <img src="Deploynment-Examples\MICLOGO.jpeg" alt="Microsoft Innovations Club" width="120"/>
 </p>
 
 # LLM-Driven Murder Mystery Prototype  
+=======
+# LLM-Driven Murder Mystery Game
+>>>>>>> d6f4d924b9cbda969c46787c0f5e57973b979fa2
 **TechnoVIT 2025 – AIML Workshop (Microsoft Innovations Club)**
 
 This repository documents the **core backend prototype, feasibility analysis, and technical exploration** behind an interactive murder mystery experience built to demonstrate **how Large Language Models (LLMs) can act as independent, role-bound agents**.

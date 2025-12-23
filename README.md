@@ -1,9 +1,19 @@
+<p align="center">
+  <img src="Deploynment-Examples\MICLOGO.jpeg" alt="Microsoft Innovations Club" width="120"/>
+</p>
+
 # LLM-Driven Murder Mystery Prototype  
 **TechnoVIT 2025 – AIML Workshop (Microsoft Innovations Club)**
 
 This repository documents the **core backend prototype, feasibility analysis, and technical exploration** behind an interactive murder mystery experience built to demonstrate **how Large Language Models (LLMs) can act as independent, role-bound agents**.
 
 The project was developed for the **AIML Workshop at TechnoVIT 2025**, conducted by the **Microsoft Innovations Club (MIC)**.
+
+---
+
+## Live deployment
+
+🔗 **Demo link:** https://ai-detective-mic.vercel.app/
 
 ---
 
@@ -35,6 +45,22 @@ I was responsible for the **entire backend and feasibility layer**, including:
 
 The frontend/UI was later developed separately.  
 This repository exists to clearly present the **original backend work**.
+
+---
+
+## Screenshots
+
+### User interface : 
+<img src="Deploynment-Examples\deploynment-ss1.jpeg" width="600"/>
+<img src="Deploynment-Examples\deploynment-ss2.jpeg" width="600"/>
+<img src="Deploynment-Examples\deploynment-ss3.jpeg" width="600"/>
+
+### A few moments from the TechnoVIT 2025 AIML workshop conducted by Microsft Innovation Club
+<img src="Deploynment-Examples\event-picture.jpeg" width="600"/>
+
+### Video demo :
+[demo video](Deploynment-Examples\demovideo.mp4)
+
 
 ---
 

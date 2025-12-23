@@ -1,73 +1,118 @@
-# Welcome to your Lovable project
+# LLM-Driven Murder Mystery Prototype  
+**TechnoVIT 2025 – AIML Workshop (Microsoft Innovations Club)**
 
-## Project info
+This repository documents the **core backend prototype, feasibility analysis, and technical exploration** behind an interactive murder mystery experience built to demonstrate **how Large Language Models (LLMs) can act as independent, role-bound agents**.
 
-**URL**: https://lovable.dev/projects/7b35bc16-d81c-418f-88cb-b121d6466532
+The project was developed for the **AIML Workshop at TechnoVIT 2025**, conducted by the **Microsoft Innovations Club (MIC)**.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Project overview
 
-**Use Lovable**
+The intent of this project was **educational and experimental**.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7b35bc16-d81c-418f-88cb-b121d6466532) and start prompting.
+It was designed to help participants understand:
+- How LLMs behave when given **strict roles and private memory**
+- The effect of **prompt structure and context limits**
+- How multiple LLM instances can simulate independent characters
+- Practical constraints when building interactive LLM systems
 
-Changes made via Lovable will be committed automatically to this repo.
+This repository focuses on the **backend logic and feasibility**, which enabled the final interactive experience.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## My contribution (core work)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+I was responsible for the **entire backend and feasibility layer**, including:
 
-Follow these steps:
+- Designing the multi-agent LLM architecture
+- Implementing independent character memory
+- Role-based prompting and constraint design
+- Interrogation logic and attempt limits
+- Feasibility observations and limitations
+- Prototype implementation in Python
+- Early technical documentation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+The frontend/UI was later developed separately.  
+This repository exists to clearly present the **original backend work**.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## How the system works (simplified)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+- Each character is backed by a **separate LLM chat session**
+- Characters receive:
+  - Private system prompts
+  - Individual memories
+  - Role-specific behavior constraints
+- One or more characters may secretly be the murderer
+- Others may appear suspicious due to personality traits
+- The player interrogates characters with limited attempts
+- LLM responses evolve based on interrogation history
+
+No fine-tuning or game engine was used — the system relies entirely on **prompting and observation**.
+
+---
+
+## Observations & feasibility notes
+
+Key observations made during development:
+
+- Prompt wording must remain **highly consistent**
+- Small changes can cause characters to forget roles
+- Context size must be controlled to avoid memory pollution
+- Separate memory per character is essential for realism
+- Innocent characters can appear guilty through behavior alone
+- Rate limits and latency affect user experience
+
+These constraints directly shaped the final prototype design.
+
+## Repository structure
+
+```text
+
+├── final_fork/ # Final integrated version (with frontend)
+├── original-backend/ # Original backend + feasibility work
+│ ├── MIC_TechnoVIT_MurderMystery_Prototype.py
+│ └── DOCUMENTATION_OF_MURDERMYSTERY_PROTOTYPE.md
+├── README.md
+└── LICENSE
 ```
 
-**Edit a file directly in GitHub**
+The `backend_prototype` folder represents the **core technical foundation** of the project.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Technologies used
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Backend / Prototype
+- Python
+- Google Generative AI (Gemma 27B)
+- Prompt-driven multi-agent design
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
+### Frontend (final product)
 - React
-- shadcn-ui
+- TypeScript
+- Vite
 - Tailwind CSS
+- shadcn/ui
 
-## How can I deploy this project?
+Frontend technologies are included here for completeness; this repository primarily focuses on backend logic and feasibility.
 
-Simply open [Lovable](https://lovable.dev/projects/7b35bc16-d81c-418f-88cb-b121d6466532) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## Running the backend prototype
 
-Yes, you can!
+```bash
+pip install google-generativeai
+python MIC_TechnoVIT_MurderMystery_Prototype.py
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Educational disclaimer
+- This project is: Intended to showcase LLM behavior, limits, and design trade-offs
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Acknowledgements
+- Developed for Microsoft Innovations Club
+- Presented at TechnoVIT 2025 – AIML Workshop
+
+## Author : Ishan Mani Singh - CODE7X

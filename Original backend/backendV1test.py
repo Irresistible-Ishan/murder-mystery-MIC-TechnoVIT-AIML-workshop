@@ -2,7 +2,7 @@
 
 import google.generativeai as genai
 import time , random , math 
-genai.configure(api_key='AIzaSyC9OO4k1bD8qfe5xKui5ihSgux3zawZEX0')
+genai.configure(api_key='use ur own api key')
 generation_config = {
   "temperature": 1,
   "top_p": 0.95,

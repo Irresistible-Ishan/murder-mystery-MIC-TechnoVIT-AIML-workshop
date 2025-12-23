@@ -59,7 +59,7 @@ This repository exists to clearly present the **original backend work**.
 <img src="Deploynment-Examples\event-picture.jpeg" width="600"/>
 
 ### Video demo :
-[demo video](Deploynment-Examples\demovideo.mp4)
+[demo video](Deploynment-Examples/demovideo.mp4)
 
 
 ---
